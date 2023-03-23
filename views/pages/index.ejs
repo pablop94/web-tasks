@@ -7,17 +7,12 @@
   <title>web tasks</title>
 </head>
 <script>
-  function lock(){
-    fetch("http://192.168.0.72:3000/lock/")
-  }
-  function shutdown(){
-    fetch("http://192.168.0.72:3000/shutdown/")
-  }
 </script>
 <body>
   <div style="display: flex; gap: 4px">
-    <button onclick="lock()">lock</button>
-    <button onclick="shutdown()">shutdown</button>
+    <% tasks.forEach(task => { %>
+      <button onclick="fetch('<%= task.url %>')"><%= task.name %></button>
+    <%})%>
   </div>
 </body>
 </html>
