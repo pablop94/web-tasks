@@ -7,4 +7,13 @@ Also, I can shutdown it.
 - [X] Lock
 - [X] Shutdown
 - [ ] Init as a service
+- [ ] Show feedback when action is done
 - [ ] Take screenshot and show it on page
+
+### Run
+```sh
+npm start
+```
+
+### Config
+Set environment variables in .env file
