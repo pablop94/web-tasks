@@ -10,8 +10,14 @@
   function lock(){
     fetch("http://192.168.0.72:3000/lock/")
   }
+  function shutdown(){
+    fetch("http://192.168.0.72:3000/shutdown/")
+  }
 </script>
 <body>
-  <button onclick="lock()">lock</button>
+  <div style="display: flex; gap: 4px">
+    <button onclick="lock()">lock</button>
+    <button onclick="shutdown()">shutdown</button>
+  </div>
 </body>
 </html>

@@ -1,13 +1,18 @@
 const tasks = require('./tasks')
 
-function configure(app){
+function configure(app) {
   app.get('/', function (req, res, next) {
     res.render('index.html');
   })
-  
-  app.get('/lock', function (req, res, next) {
-      console.log('lock received')
-      tasks.lock()
+
+  registerTask(app, "lock")
+  registerTask(app, "shutdown")
+}
+
+function registerTask(app, task_name){
+  app.get(`/${task_name}`, function (req, res, next) {
+    console.log(`${task_name} received`)
+    tasks[task_name]()
   })
 }
 
